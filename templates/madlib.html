@@ -2,5 +2,23 @@
 
 {% block content %} 
 
-There once was a {{madlibscolor}} {{madlibsnoun}} sitting inside the Hackbright Lab. When {{madlibsperson}} went to pick it up, it burst into flames in a totally {{madlibsadjective}} way.
+There once was a {{madlibscolor}} {{madlibsnoun}} sitting inside the Hackbright Lab. When {{madlibsperson}} went to pick it up, it burst into flames in a totally {{madlibsadjective}} way. 
+
+{% if madlibsanimalnames %}
+
+    Flying aross the sky, I see bits of
+        {% if madlibsanimalnames|length == 1 %}
+            {% for animal in madlibsanimalnames %}
+                {{animal}}
+            {% endfor %}
+
+        {% else %}
+            {% for animal in madlibsanimalnames %}
+                {{animal}},
+            {% endfor %}
+        {% endif %}
+        
+    and smoke everywhere! 
+{% endif %}
+
 {% endblock %}

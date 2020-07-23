@@ -63,13 +63,14 @@ def show_madlib():
     madlibs_color = request.args.get("madlibs-color")
     madlibs_noun = request.args.get("madlibs-noun")
     madlibs_adjective = request.args.get("madlibs-adjective")
-    
+    madlibs_animalnames = request.args.getlist("animalname")
 
     return render_template("madlib.html", 
         madlibsperson=madlibs_person, 
         madlibscolor=madlibs_color, 
         madlibsnoun=madlibs_noun, 
-        madlibsadjective=madlibs_adjective)
+        madlibsadjective=madlibs_adjective,
+        madlibsanimalnames=madlibs_animalnames)
 
 
 if __name__ == '__main__':
